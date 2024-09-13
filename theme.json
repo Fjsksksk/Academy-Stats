@@ -1,0 +1,10 @@
+{
+    "name": "Acadamy Stats",
+    "dataColors": [
+      "#ddf0e5","#a4f0c3", "#8cb89f", "#8ca9b8", "#5c6c7d", "#003366","#fef29b","#356da5"
+    ],
+    "background": "#ddf0e5",
+    "foreground": "#003366",
+    "tableAccent": "#f0f0f0"
+  }
+  
