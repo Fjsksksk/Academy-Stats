@@ -1,0 +1,4 @@
+Ce jeu de données contient les données sur les effectifs d'élèves de première générale dans les enseignements de spécialité par spécialité et par principales combinaisons.
+
+Observation à la rentrée : début octobre de chaque année.
+Date de la dernière observation 01/10/2022.

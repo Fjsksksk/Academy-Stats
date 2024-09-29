@@ -1,0 +1,5 @@
+Nombre de boursiers à la rentrée 2020 par départements selon le type d'établissements et le secteur.
+
+Le nombre de boursiers au dernier échelon correspond à l'échelon 3 pour les établissements de type collège et à l'échelon 6 pour les établissements de type lycée.
+
+Les données <5 ont été mises à "0". Une colonne "Commentaire_xxx" a été créée afin de les identifier. Cela concerne uniquement les données des établissements de type lycée. Par conséquent, le total national est inférieur au total officiel pour ce type d'établissements : 607 992 boursiers au lycée dont 152 241 au dernier échelon.

@@ -1,0 +1,11 @@
+Les candidats de Parcoursup étudiés dans ces données sont les bacheliers de terminale générale inscrits sur Parcoursup chaque année depuis 2021(y.c. CNED , DROM et AEFE ) ayant au moins un vœu d’orientation validé en phase principale et/ou complémentaire et dont les enseignements de spécialité ont correctement été remontés dans Parcoursup.
+
+Ce sont les mêmes bacheliers de terminales générales que ceux de l’open data Parcoursup de la même année. Ces données diffèrent légèrement par rapport au précédent jeu de données.
+
+Retrouvez la documentation complète dans la partie Pièces-jointes ci-dessous.
+
+Définitions :
+
+EDS (Enseignement de spécialité) : A partir de 2021 et pour le baccalauréat général, les séries ES, L et S ont disparu pour laisser place à 12 puis 13 enseignements de spécialité (2 EDS suivis en Terminale, retenus parmi les 3 EDS suivis par l'élève en 1ère).
+
+Doublettes : c'est la combinaison des 2 enseignements de spécialité suivis en Terminale

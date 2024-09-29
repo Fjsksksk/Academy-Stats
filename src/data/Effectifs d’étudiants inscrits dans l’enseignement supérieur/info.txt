@@ -1,0 +1,9 @@
+Ce jeu de données présente les effectifs d’étudiants inscrits dans les
+établissements et les formations de l’enseignement supérieur, recensés
+pour les années 2001-2002 à 2013-14 dans les systèmes d’information et
+enquêtes du ministère de l’Éducation nationale, de l’Enseignement
+supérieur et de la Recherche, des ministères en charge de l’Agriculture,
+de la Pêche, de la Culture, de la Santé et des Sports.
+
+Il décline les informations à tous les niveaux géographiques, de la
+commune jusqu'au national.

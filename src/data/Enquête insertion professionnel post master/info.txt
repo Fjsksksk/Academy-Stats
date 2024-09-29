@@ -1,0 +1,43 @@
+Ces données sont basées sur les données collectées dans le cadre de l'opération nationale de collecte de données sur l’insertion professionnelle des diplômés de Master.
+
+2 nouveaux indicateurs ont été ajoutés pour la session 2020 :
+
+Taux d'emploi : part des diplômés en emploi parmi l'ensemble des diplômés actifs (en emploi ou en recherche) ou inactifs
+
+Taux d'emploi salarié en France : part des diplômés en emploi salarié en France parmi l'ensemble des diplômés actifs (en emploi ou en recherche) ou inactifs
+
+Cette enquête a été menée
+
+en décembre 2022, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2020.
+en décembre 2021, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2019.
+en décembre 2020, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2018.
+en décembre 2019, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2017.
+en décembre 2018, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2016.
+en décembre 2017, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2015.
+
+en décembre 2016, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2014.
+
+en décembre 2015, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2013.
+en décembre 2014, 18 et 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2012.
+en décembre 2013, 30 mois après l’obtention de leur diplôme, auprès des diplômés de Master de la session 2011.
+Le taux d’insertion est défini comme étant le pourcentage de diplômés occupant un emploi, quel qu’il soit, sur l’ensemble des diplômés présents sur le marché du travail. Il est calculé sur les diplômés de nationalité française, issus de la formation initiale, entrés immédiatement et durablement sur le marché du travail après l’obtention de leur diplôme en 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 ou 2020.
+
+L’information collectée sur le salaire porte sur le salaire net, primes comprises. Les salaires affichés correspondent aux valeurs médianes sur les emplois à temps plein. A partir de ces valeurs, on estime un salaire brut annuel, sur la base d’un taux forfaitaire de passage du net au brut de 1,3 (donnée moyenne constatée sur les salaires du secteur privé).
+
+L’enquête a été menée par les universités dans le cadre d’une charte dont les dispositions visent à garantir la comparabilité des résultats entre les établissements. La coordination d’ensemble et l’exploitation de l’enquête sont prises en charge par le ministère en charge de l'Enseignement supérieur et de la Recherche.
+
+Sources des données complémentaires :
+
+% de diplômés boursiers : données observées sur la population de l'enquête sur l'insertion professionnelle.
+
+Taux de chômage régional : INSEE - 4ème trimestre 2013 pour la session 2011, INSEE - 4ème trimestre 2014 pour la session 2012, INSEE - 4ème trimestre 2015 pour la session 2013, INSEE - 1er trimestre 2017 pour la session 2014, INSEE - 4ème trimestre 2017 pour la session 2015, INSEE - 4ème trimestre 2018 pour la session 2016, INSEE - 4ème trimestre 2019 pour la session 2017, INSEE - 4ème trimestre 2020 pour la session 2018, INSEE - 4ème trimestre 2021 pour la session 2019, INSEE - 4ème trimestre 2022 pour la session 2020.
+
+Salaire net mensuel médian régional : INSEE DADS 2011 pour la session 2011, INSEE DADS 2012 pour la session 2012, INSEE DADS 2013 pour la session 2013, INSEE DADS 2014 pour la session 2014, INSEE DADS 2015 pour la session 2015, INSEE DADS 2016 pour la session 2016, INSEE DADS 2017 pour la session 2017, INSEE DADS 2018 pour la session 2018, INSEE DADS 2019 pour la session 2019, INSEE DADS 2020 pour la session 2020 pour les 25-29 ans employés à temps plein dans les catégories socioprofessionnelles "Cadres et professions intellectuelles supérieures" et " Professions intermédiaires.
+
+Légende : nd = non disponible (aucun répondant) ns = non significatif (nombre de répondants inférieur à 30).
+
+Source : enquête d'insertion professionnelle à 18 et 30 mois des diplômés de l’université 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 et 2020 et enquête d'insertion professionnelle à 30 mois des diplômés de l’université 2011
+
+Collecte : enquête effectuée par les universités, traitements et synthèse réalisés par MESR-SIES
+
+Champ : diplômés de Master 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 et 2020 des universités de France métropolitaine et des DOM (hors Paris-Dauphine et l'Université Gustave Eiffel (pour les diplômés 2020)), de nationalité française, issus de la formation initiale, entrés immédiatement et durablement sur le marché de l’emploi après l’obtention de leur diplôme.

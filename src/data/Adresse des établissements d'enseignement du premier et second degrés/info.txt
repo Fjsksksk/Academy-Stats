@@ -1,0 +1,3 @@
+garde la longitude et la latitude 
+
+Liste géolocalisée des établissements d'enseignement des premier et second degrés (tous ministères de tutelle, secteurs public et privé) situés en France. Les établissements concernés sont déterminés selon leur code nature dans la nomenclature de l'éducation nationale. Les codes entre 100 et 199 (premier degré) et entre 300 et 399 (second degré) sont retenus.

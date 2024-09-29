@@ -1,0 +1,10 @@
+Ce jeu de données présente les effectifs d’élèves par niveau et nombre de classes par école.
+
+Observation à la rentrée : début octobre de chaque année.
+Date de la dernière observation 01/10/2023.
+
+Abréviations utilisées :
+
+REP : Réseau d’Éducation Prioritaire
+REP+ : Réseau d’Éducation Prioritaire Plus
+ULIS : Unités Localisées pour l'Inclusion Scolaire

@@ -1,0 +1,17 @@
+Attention ici fichier xml
+Ensemble des lieux de restauration des CROUS (france entière)
+les ressources ci-dessous recensent les restaurants, brasseries et cafétérias dans le réseau des CROUS.
+
+Les services associés renseignés :
+
+un identifiant unique
+un nom
+heures d'ouverture
+description courte
+accessibilité des personnes à mobilité réduite
+moyens de paiement (carte bleue, Izly, espèces)
+localisation GPS
+zone de proximité
+son type (restaurant, cafet, brasserie)
+une image représentant le restaurant
+coordonnées de contact

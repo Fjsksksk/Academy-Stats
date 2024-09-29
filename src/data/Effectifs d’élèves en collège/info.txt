@@ -1,0 +1,1 @@
+Ce jeu de données contient les effectifs des collèges par niveau, sexe, principales langues vivantes 1 et langues vivantes 2, observés au début du mois d’octobre de chaque année. Dernière observation le 01/10/2022.

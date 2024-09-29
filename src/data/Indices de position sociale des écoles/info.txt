@@ -1,0 +1,27 @@
+L’indice de position sociale (IPS) permet d'appréhender le statut social des élèves à partir des professions et catégories sociales (PCS) de leurs parents. À chaque PCS ou couple de PCS est associée une valeur numérique de l’IPS. Cette valeur numérique correspond à un résumé quantitatif d’un ensemble d’attributs socio-économiques et culturels liés à la réussite scolaire. Plus l'indice de position sociale (IPS) est élevé, plus les élèves sont en moyenne d'origine sociale favorisée. Plus il est faible, plus les élèves sont d'origine défavorisée socialement.
+
+Concrètement, les valeurs de référence de l'indice pour chaque PCS, ou couple de PCS sont déterminées grâce à une méthode statistique qui permet de synthétiser un ensemble de caractéristiques décrivant les conditions de vie des élèves (voir article de Rocher, 2016). L'indice d'une PCS donnée est ainsi le résumé quantitatif d'un certain nombre d'attributs socio-économiques et culturels liés à la réussite scolaire, que l'on retrouve en moyenne pour cette PCS.
+
+La première version de l’indice, utilisée jusqu’à la rentrée 2021, a été calculée sur les données du panel de la DEPP d’élèves entrés en sixième en 2007. Pour ces 35 000 élèves du panel, on dispose d’une information riche sur leurs conditions de vie permettant d’établir la table de passage PCS- IPS.
+
+À la rentrée 2022, cette table de passage a été mise à jour en mobilisant les données du panel de la DEPP d’élèves entrés en 2011 en CP.
+
+Dès lors que les PCS des parents sont renseignés, ce qui est le cas pour la très grande majorité des élèves du second degré, il suffit d'appliquer ces valeurs de référence et de considérer cette nouvelle variable comme un indice, c'est-à-dire de manière quantitative.
+
+Le niveau social d'un établissement scolaire est apprécié à travers le calcul de la moyenne des IPS des élèves qui y sont scolarisés.
+
+Il convient de rappeler que, comme tout indice synthétique, il s’agit d’un résumé simplifié de la réalité, qui ne peut rendre compte à lui seul de la complexité de la situation socio-économique et culturelle des élèves accueillis dans un établissement.
+
+L’IPS étant basé sur les PCS déclarées par les familles et enregistrées par les établissements, il est soumis à une certaine marge d’erreur : ainsi, il est conseillé de ne pas sur-interpréter des différences de 3 points ou moins concernant les IPS moyens des écoles.
+
+Enfin, il convient de noter que la méthodologie de calcul de l’indice a changé, entraînant une rupture de série à partir de la rentrée 2022 : les valeurs de référence de l’indice ont changé et les élèves dont les PCS des deux parents sont non renseignées ne rentrent plus dans le calcul de l’IPS moyen de leur école (table de passage disponible en pièce jointe ci-dessous).
+
+Champ
+
+Le fichier fournit les IPS moyens des écoles de France sous tutelle de l’Éducation Nationale, publiques et privées sous contrat, calculés à partir des données de la rentrée N.
+
+Le calcul des IPS des écoles est effectué à partir des élèves de CM2, dont on connaît les PCS lorsqu’ils sont en 6ème. Il correspond plus exactement à la moyenne de l’IPS des anciens élèves de l’école sur les cinq dernières années. En outre, les IPS sont fournis uniquement pour les écoles ayant eu au moins 25 élèves de CM2 sur les cinq dernières années. De ce fait les écoles maternelles sont exclues du champ puisqu’elles n’ont pas d’élèves de CM2. Le fichier fournit également les effectifs cumulés de l’école au cours des cinq dernières années à partir desquels l’IPS est calculé.
+
+Dans le fichier mis à disposition, chaque ligne correspond à une école pour une année scolaire donnée.
+
+Modifications : un premier fichier sur l’IPS des écoles a été déposé le 05/10/2022. Il présentait l’IPS des écoles ayant eu plus de 5 élèves de CM2 sur les cinq dernières années.

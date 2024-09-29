@@ -1,0 +1,3 @@
+Ensemble des logements proposés aux étudiants par le réseau des CROUS.
+
+Ces données sont issues du jeu de données open data mis à disposition par le Centre National des Œuvres Universitaires et Scolaires (CNOUS) https://www.data.gouv.fr/fr/datasets/logements-etudiants/
