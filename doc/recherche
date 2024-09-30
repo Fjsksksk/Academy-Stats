@@ -1,0 +1,21 @@
+    1) Avant de commencer à intégrer les donnée, je dois d’abord créer la base de données en fonction des données et des fichiers choisis, et pour cela je dois faire un mcd et mld pour la gestion des besoins et  l’avancement efficace du projet 
+
+    2) Créer la base de données 
+    3) j’ai préféré de faire un etl en python  qui va me permettre d'automatiser le nettoyage et l'insertion des données dans notre base de données à fin de me faciliter les tâches d’après et en cas ou je n’arrive pas je serais obligé de tout faire à la main
+-Réaliser le code 
+-Faire des tests  
+Sélection Manuelle des Données :
+Permettre à l'utilisateur de sélectionner manuellement les fichiers CSV qu'il souhaite utiliser.
+Nettoyage des Données :
+Nettoyer les données sélectionnées en supprimant les valeurs manquantes, corrigeant les erreurs, normalisant les formats, etc.
+Chargement des Données :
+Charger les données nettoyées dans la base de données MySQL.
+    4) Le deuxième etl est pour la génération des power bi 
+	Étapes du Processus ETL 
+Étapes du Deuxième Processus ETL
+Extraction des Données Nettoyées :
+Extraire les données depuis la base de données MySQL.
+Transformation des Données pour Power BI :
+Effectuer des transformations supplémentaires pour optimiser les données pour l'analyse, comme l'agrégation, la création de colonnes calculées, etc.
+Chargement des Données dans Power BI :
+Charger les données transformées dans un fichier ou un format compatible avec Power BI, comme un fichier CSV, ou directement dans Power BI si une connexion directe à MySQL est possible
