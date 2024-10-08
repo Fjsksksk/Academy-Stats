@@ -1,4 +1,4 @@
-## Idées de Départ##
+## Idées de Départ 
 
 #Préparation avant l'intégration des données :
 Avant de commencer à intégrer les données, je dois d'abord créer la base de données en fonction des données et des fichiers choisis. Pour cela, il est nécessaire de réaliser un Modèle Conceptuel de Données (MCD) et un Modèle Logique de Données (MLD) afin de bien comprendre les besoins et d'assurer un avancement efficace du projet.
