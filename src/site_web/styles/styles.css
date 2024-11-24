@@ -2,15 +2,15 @@ html, body {
   font-family: Tahoma, sans-serif; 
   height: 100%;
   margin: 0;
-  background-image: url('../images/fond_menu.png'); /* Arrière-plan appliqué au body */
-  background-size: auto; /* Garder la taille originale de l'image */
-  background-repeat: repeat; /* Répéter l'arrière-plan */
-  background-position: center; /* Centrer l'image de fond */
-  overflow-x: hidden; /* Empêche le défilement horizontal */
+  background-image: url('../images/fond_menu.png');
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: center;
+  overflow-x: hidden;
 }
 
 .background-container {
-  height: 100vh; /* Garde la hauteur de la vue */
+  height: 100vh;
   width: 100vw; 
   position: relative; 
 }
@@ -44,8 +44,8 @@ footer {
 
 .animated-letter {
   opacity: 0;
-  animation: fadeInLetters 1s ease forwards; /* Animation plus longue pour plus de fluidité */
-  animation-delay: calc(var(--i) * 0.2s); /* Délai pour chaque lettre, augmentée pour plus de fluidité */
+  animation: fadeInLetters 1s ease forwards;
+  animation-delay: calc(var(--i) * 0.2s);
 }
 
 @keyframes fadeInLetters {
@@ -70,7 +70,6 @@ footer {
   margin-top: 20px;
 }
 
-/* Conteneur pour les post-its */
 .postit-container {
   display: flex;
   justify-content: center;
@@ -79,7 +78,6 @@ footer {
   margin-top: 30px; 
 }
 
-/* Style pour chaque post-it */
 .postit {
   position: relative;
   text-align: center;
@@ -104,7 +102,7 @@ footer {
   right: 0;
   bottom: 0;
   margin: auto;
-  z-index: 0; /* Derrière le texte */
+  z-index: 0;
 }
 
 
@@ -112,17 +110,15 @@ footer {
   position: relative;
   font-size: 24px; 
   font-weight: bold;
-  z-index: 1; /* Au-dessus de l'icône */
+  z-index: 1;
   margin-top: 10px;
   color: #2b3a60;
 }
 
-/* Animation au survol des post-its */
 .postit:hover {
   transform: scale(1.1);
 }
 
-/* Couleurs des différents post-its */
 .postit:nth-child(1) i {
   color: #9de3ab;
 }
@@ -136,22 +132,12 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .postit {
-      width: 250px; /* Gardé à 250px */
-      height: 250px; /* Gardé à 250px */
+      width: 250px; 
+      height: 250px;
   }
   .subtitle {
-      font-size: 28px; /* Gardé le même */
-  }
-}
-
-@media (max-width: 480px) {
-  .postit {
-      width: 200px; /* Gardé à 200px */
-      height: 200px; /* Gardé à 200px */
-  }
-  .subtitle {
-      font-size: 24px; /* Gardé le même */
+      font-size: 28px;
   }
 }

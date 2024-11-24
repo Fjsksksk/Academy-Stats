@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/accueil.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <title>Academy Stats - Accueil</title>
+    <link rel="shortcut icon" href="../images/logo_t.png" />
+</head>
+<body>
+
+    <!-- Menu téléphone -->
+    <button id="hamburger-button" class="btn-hamburger">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Bouton pour réduire/agrandir le menu -->
+    <button id="toggle-button" class="btn-toggle">
+        <i class="bi bi-arrow-left-circle"></i>
+    </button>
+
+    <!-- Menu -->
+    <div class="main-container">
+        <nav id="sidebar" class="sidebar">
+            <div class="logo-section">
+                <a href="../index.html">
+                    <img src="../images/logo_t.png" alt="Logo" class="logo">
+                </a>                
+                <h2 class="menu-text">Academy Stats</h2>
+            </div>
+            <ul class="menu-list">
+                <li><a href="../pages/accueil.html"><i class="bi bi-house-door"></i> <span class="menu-text">Accueil</span></a></li>
+                <li><a href="../pages/top.html"><i class="bi bi-bar-chart"></i> <span class="menu-text">Top Rapports</span></a></li>
+                <li>
+                    <a href="#"><i class="bi bi-list"></i> <span class="menu-text">Catégories</span></a>
+                    <ul class="submenu">
+                        <li class="has-submenu">
+                            <a href="#"><span class="menu-text">Niveau Scolaire</span></a>
+                            <ul class="submenu hidden">
+                                <li><a href="#">École</a></li>
+                                <li><a href="#">Collège</a></li>
+                                <li><a href="#">Lycée</a></li>
+                                <li><a href="#">Université</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><span class="menu-text">Test</span></a>
+                            <ul class="submenu hidden">
+                                <li><a href="#">École</a></li>
+                                <li><a href="#">Collège</a></li>
+                                <li><a href="#">Lycée</a></li>
+                                <li><a href="#">Université</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>            
+        </nav>
+
+        <!-- Contenu principal -->
+        <div id="content" class="content">
+            <h1>TOP 10 des rapports les plus téléchargés</h1>
+        </div>
+    </div>
+
+    <script>
+        
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const toggleButton = document.getElementById('toggle-button');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+
+        if (hamburgerButton && sidebar && toggleButton) {
+            // Fonction pour réduire/agrandir le menu
+            toggleButton.addEventListener('click', () => {
+                if (window.innerWidth > 1024) {
+                    sidebar.classList.toggle('collapsed');
+                    toggleButton.querySelector('i').classList.toggle('bi-arrow-left-circle');
+                    toggleButton.querySelector('i').classList.toggle('bi-arrow-right-circle');
+
+                    if (sidebar.classList.contains('collapsed')) {
+                        content.style.marginLeft = '90px';
+                        toggleButton.style.left = '100px';
+                    } else {
+                        content.style.marginLeft = '250px';
+                        toggleButton.style.left = '260px';
+                    }
+                }
+            });
+
+            hamburgerButton.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('open');
+                    sidebar.style.left = '0';
+                    content.style.marginLeft = sidebar.classList.contains('collapsed') ? '90px' : '250px';
+                } else {
+                    sidebar.style.left = '-250px';
+                    content.style.marginLeft = '0';
+                }
+            });
+        }
+
+        // Gestion des sous-menus déroulants
+        document.querySelectorAll('.has-submenu > a').forEach(menu => {
+            menu.addEventListener('click', (e) => {
+                e.preventDefault();
+                const submenu = menu.nextElementSibling;
+                submenu.classList.toggle('hidden');
+                submenu.classList.toggle('open');
+            });
+        });
+
+    </script>
+
+</body>
+</html>
