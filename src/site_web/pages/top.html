@@ -32,16 +32,20 @@
             <ul class="menu-list">
                 <li><a href="../pages/accueil.html"><i class="bi bi-house-door"></i> <span class="menu-text">Accueil</span></a></li>
                 <li><a href="../pages/top.html"><i class="bi bi-bar-chart"></i> <span class="menu-text">Top Rapports</span></a></li>
+                <li class="search-bar">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="search-input" placeholder="Rechercher...">
+                </li>
                 <li>
                     <a href="#"><i class="bi bi-list"></i> <span class="menu-text">Catégories</span></a>
                     <ul class="submenu">
                         <li class="has-submenu">
                             <a href="#"><span class="menu-text">Niveau Scolaire</span></a>
                             <ul class="submenu hidden">
-                                <li><a href="#">École</a></li>
+                                <li><a href="../pages/accueil.html?filter=ecole">École</a></li>
                                 <li><a href="#">Collège</a></li>
                                 <li><a href="#">Lycée</a></li>
-                                <li><a href="#">Université</a></li>
+                                <li><a href="../pages/accueil.html?filter=universite">Université</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu">
@@ -60,8 +64,103 @@
 
         <!-- Contenu principal -->
         <div id="content" class="content">
-            <h1>TOP 10 des rapports les plus téléchargés</h1>
+            <!-- Titre principal -->
+        </br><h1 class="page-title">TOP 5 des meilleurs rapports 2024</h1>
+
+            <!-- Section des rapports -->
+            <div id="top-rapports">
+
+                <div class="powerbi-report-container">
+                    <div class="ranking">
+                        <span class="ranking-number">1.</span>
+                        <i class="bi bi-trophy ranking-icon"></i>
+                    </div>
+                    <h3>Rapport Étudiant 1</h3></br>
+                    <iframe src="https://app.powerbi.com/reportEmbed?reportId=2708e2a8-596a-477c-a708-78ad27a1aebe&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                    <button class="download-btn" onclick="telechargerRapport('Rapport Étudiant 1')">Télécharger</button>
+                    <!-- Espace analyse des données -->
+                    <div id="data-analysis">
+                        <h2>Analyse des données</h2>
+                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
+                    </div>
+                </div>
+                
+                <div class="powerbi-report-container">
+                    <div class="ranking">
+                        <span class="ranking-number">2.</span>
+                        <i class="bi bi-trophy ranking-icon"></i>
+                    </div>
+                    <h3>Rapport Collège Sexe</h3></br>
+                    <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                    <button class="download-btn" onclick="telechargerRapport('Rapport Collège Sexe')">Télécharger</button>
+                    <!-- Espace analyse des données -->
+                    <div id="data-analysis">
+                        <h2>Analyse des données</h2>
+                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
+                    </div>
+                </div>
+
+                <div class="powerbi-report-container">
+                    <div class="ranking">
+                        <span class="ranking-number">3.</span>
+                        <i class="bi bi-trophy ranking-icon"></i>
+                    </div>
+                    <h3>Rapport Collège Sexe</h3></br>
+                    <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                    <button class="download-btn" onclick="telechargerRapport('Rapport Collège Sexe')">Télécharger</button>
+                    <!-- Espace analyse des données -->
+                    <div id="data-analysis">
+                        <h2>Analyse des données</h2>
+                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
+                    </div>
+                </div>
+
+                <div class="powerbi-report-container">
+                    <div class="ranking">
+                        <span class="ranking-number">4.</span>
+                        <i class="bi bi-trophy ranking-icon"></i>
+                    </div>
+                    <h3>Rapport Collège Sexe</h3></br>
+                    <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                    <button class="download-btn" onclick="telechargerRapport('Rapport Collège Sexe')">Télécharger</button>
+                    <!-- Espace analyse des données -->
+                    <div id="data-analysis">
+                        <h2>Analyse des données</h2>
+                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
+                    </div>
+                </div>
+
+                <div class="powerbi-report-container">
+                    <div class="ranking">
+                        <span class="ranking-number">5.</span>
+                        <i class="bi bi-trophy ranking-icon"></i>
+                    </div>
+                    <h3>Rapport Collège Sexe</h3></br>
+                    <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                    <button class="download-btn" onclick="telechargerRapport('college-sexe')">Télécharger</button>
+                    <!-- Espace analyse des données -->
+                    <div id="data-analysis">
+                        <h2>Analyse des données</h2>
+                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
+                    </div>
+                </div>
+               
+            </div>
+            
         </div>
+
+    <script>
+        function telechargerRapport(titre) {
+            const pdfPath = `../PDF/${titre}.pdf`; 
+            const link = document.createElement('a');
+            link.href = pdfPath;
+            link.download = `${titre}.pdf`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script> 
+
     </div>
 
     <script>
@@ -80,11 +179,11 @@
                     toggleButton.querySelector('i').classList.toggle('bi-arrow-right-circle');
 
                     if (sidebar.classList.contains('collapsed')) {
-                        content.style.marginLeft = '90px';
-                        toggleButton.style.left = '100px';
+                    toggleButton.style.left = '100px';
+                    content.style.marginLeft = '100px';
                     } else {
-                        content.style.marginLeft = '250px';
                         toggleButton.style.left = '260px';
+                        content.style.marginLeft = '260px';
                     }
                 }
             });
@@ -116,6 +215,6 @@
         });
 
     </script>
-
+    
 </body>
 </html>

@@ -1,5 +1,4 @@
 /* Menu et base de la page*/
-
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +8,11 @@
 .main-container {
     display: flex;
     background-image: url('../images/fond_base.png');
-    background-repeat: repeat; /* Répétition verticale et horizontale */
-    background-size: auto; /* Taille originale de l'image */
-    background-position: top left; /* Position de départ de l'image */
-    min-height: 100vh; /* S'assure que le fond couvre l'écran */
+    background-repeat: repeat; 
+    background-size: auto; 
+    background-position: top left; 
+    min-height: 100vh;
 }
-
 
 .sidebar {
     width: 250px;
@@ -24,11 +22,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: fixed; /* Fixe la barre sur l'écran */
+    position: fixed;
     top: 0;
-    left: 0; /* Colle le menu sur le bord gauche */
-    height: 100vh; /* Prend toute la hauteur de la fenêtre */
-    z-index: 1000; /* Assure qu'il soit au-dessus des autres éléments */
+    left: 0; 
+    height: 100vh; 
+    z-index: 1000; 
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -140,7 +138,7 @@ p {
 #content {
     flex: 1;
     padding: 40px;
-    margin-left: 260px; /* Compense la largeur du menu */
+    margin-left: 260px;
     transition: margin-left 0.3s ease;
 }
 
@@ -205,36 +203,40 @@ p {
 
 
 /*Power BI */
-/* Style for embedded Power BI reports */
+
+#top-rapports h3 {
+    margin-top: 10px; /* Réduction de la marge au-dessus des titres */
+}
+
 .powerbi-report-container {
-    margin: 20px auto; /* Add spacing between reports */
-    max-width: 100%; /* Ensure the container adapts to screen size */
-    padding: 15px; /* Inner padding for aesthetics */
-    border: 1px solid #ddd; /* Subtle border */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    background-color: #f9f9f9; /* Light background for contrast */
+    margin: 20px auto; 
+    max-width: 100%; 
+    padding: 15px; 
+    border: 1px solid #ddd;
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #f9f9f9; 
+    overflow: hidden;
 }
 
 .powerbi-report-container iframe {
-    width: 100%; /* Full width for responsiveness */
-    height: 400px; /* Fixed height to maintain visibility */
-    border: none; /* Remove iframe border */
-    border-radius: 10px; /* Rounded corners for iframe */
-    overflow: hidden; /* Prevent overflow issues */
+    width: 100%; 
+    height: 400px;
+    border: none; 
+    border-radius: 10px; 
+    overflow: hidden; 
 }
 
-/* Correction pour les titres des rapports */
+/* titres des rapports */
 .content h3 {
-    font-size: 27px; /* Taille du texte augmentée */
-    margin-top: 50px; /* Marge au-dessus du titre */
-    font-weight: bold; /* Texte accentué */
+    font-size: 27px; 
+    margin-top: 50px; 
+    font-weight: bold; 
 }
 
 
 /*recherche*/
 
-/* Style pour la barre de recherche */
 .search-bar {
     display: flex;
     align-items: center;
@@ -264,7 +266,7 @@ p {
     cursor: pointer;
 }
 
-/* Barre masquée dans le menu réduit, seule la loupe reste visible */
+
 .sidebar.collapsed .search-bar input {
     display: none;
 }
@@ -279,15 +281,50 @@ p {
     font-size: 20px;
 }
 
+/*Bouton téléchargement*/
+.download-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right;
+}
 
+.download-btn:hover {
+    background-color: #0055aa;
+}
+
+/* TOP */
+.ranking {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.ranking-number {
+    font-size: 30px;
+    color: #003366;
+}
+
+.ranking-icon {
+    font-size: 30px;
+    color: #ffcc00;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
 
     .powerbi-report-container iframe {
-        height: 220px; /* Adjust height for smaller screens */
+        height: 300px; 
     }
-
     .sidebar {
         width: 200px;
     }
@@ -301,8 +338,8 @@ p {
     }
 
     .main-container {
-        background-size: cover; /* Ajuste automatiquement le fond */
-        background-repeat: repeat; /* Toujours répété */
+        background-size: cover;
+        background-repeat: repeat;
     }
    
     .sidebar {
@@ -314,11 +351,11 @@ p {
     }
 
     .sidebar.collapsed {
-        width: 250px; /* En version responsive, ne pas réduire */
+        width: 250px; 
     }
 
     .sidebar.collapsed .menu-text {
-        display: block; /* Affiche le texte en responsive */
+        display: block; 
     }
 
     .btn-hamburger {
@@ -326,35 +363,40 @@ p {
     }
 
     #sidebar {
-        position: fixed; /* Assure que le menu se superpose correctement */
+        position: fixed;
         top: 0;
-        height: 100%; /* S'étend sur toute la hauteur */
-        overflow-y: auto; /* Permet le défilement si le menu dépasse l'écran */
-        transition: transform 0.3s ease; /* Animation fluide */
-        transform: translateX(-100%); /* Par défaut, le menu est caché */
+        height: 100%; 
+        overflow-y: auto; 
+        transition: transform 0.3s ease; 
+        transform: translateX(-100%); 
     }
 
     #sidebar.open {
-        transform: translateX(0); /* Affiche le menu */
+        transform: translateX(0); 
     }
 
     .btn-hamburger {
-        position: fixed; /* Assure que le bouton reste visible */
+        position: fixed; 
         top: 20px;
         left: 20px;
-        z-index: 1100; /* Toujours au-dessus */
+        z-index: 1100; 
     }
 
     #content {
-        margin-left: 0; /* Réinitialise le décalage en responsive */
+        margin-left: 0; 
     }
 
     .btn-toggle {
-        display: none; /* Masquer le bouton en responsive */
+        display: none; 
     }
 
     #content {
         margin-left: 0;
+    }
+
+    .search-bar input {
+        width: 80%; 
+        max-width: 120px; 
     }
 }
 

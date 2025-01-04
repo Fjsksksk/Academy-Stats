@@ -64,7 +64,6 @@
 
         <!-- Contenu principal -->
         <div id="content" class="content">
-            <h1>Bienvenue sur Academy Stats</h1>
         </div>
 
         <script>
@@ -72,15 +71,15 @@
             const rapports = [
                 {
                     id: 1,
-                    titre: "Rapport Étudiant 1",
+                    titre: "projet",
                     url: "https://app.powerbi.com/reportEmbed?reportId=2708e2a8-596a-477c-a708-78ad27a1aebe&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
-                    tags: ["etudiant","enseignant","ecole"]
+                    tags: ["etudiant", "enseignant", "ecole"]
                 },
                 {
                     id: 2,
                     titre: "college-sexe",
                     url: "https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
-                    tags: ["enseignant","universite"]
+                    tags: ["enseignant", "universite"]
                 },
                 {
                     id: 3,
@@ -90,48 +89,76 @@
                 }
             ];
 
+            const searchInput = document.getElementById('search-input');
+            const contentDiv = document.getElementById('content');
+
             // Fonction pour récupérer le paramètre de filtre dans l'URL
             function getFilterFromURL() {
                 const params = new URLSearchParams(window.location.search);
-                return params.get('filter') || ''; // Renvoie le filtre ou une chaîne vide
+                return params.get('filter') || ""; 
             }
 
             // Fonction pour afficher les rapports filtrés
-           
-            function afficherRapportsFiltres() {
-                const filter = getFilterFromURL(); // Récupérer le filtre
-                const contentDiv = document.getElementById('content'); // Conteneur principal
+            function afficherRapports(searchTerm = "") {
+                const filter = getFilterFromURL();
+                contentDiv.innerHTML = "";
 
-                // Vider le contenu existant
-                contentDiv.innerHTML = `<h1>Rapports pour "${filter || 'tous'}"</h1>`;
-
-                // Filtrer les rapports correspondant au tag ou afficher tous les rapports si le filtre est vide
-                const rapportsFiltres = filter 
-                    ? rapports.filter(rapport => rapport.tags.includes(filter)) 
-                    : rapports;
+                // Filtrer les rapports selon le tag et la barre de recherche
+                const rapportsFiltres = rapports.filter(rapport => {
+                    const correspondAuFiltre = filter ? rapport.tags.includes(filter) : true;
+                    const correspondALaRecherche = rapport.titre.toLowerCase().includes(searchTerm.toLowerCase());
+                    return correspondAuFiltre && correspondALaRecherche;
+                });
 
                 if (rapportsFiltres.length > 0) {
-                    // Ajouter chaque rapport filtré
                     rapportsFiltres.forEach(rapport => {
                         const rapportHTML = `
                             <div>
-                                <h3>${rapport.titre}</h3>
+                                <h3>${rapport.titre}</h3></br>
                                 <div class="powerbi-report-container">
-                                    <iframe title="${rapport.titre}" width="1140" height="541.25" src="${rapport.url}" frameborder="0" allowFullScreen="true"></iframe>
+                                    <iframe title="${rapport.titre}" width="1140" height="541.25" src="${rapport.url}" frameborder="0" allowfullscreen></iframe>
+                                    <button class="download-btn" onclick="telechargerRapport('${rapport.titre}')">Télécharger</button>
                                 </div>
                             </div>
                         `;
                         contentDiv.innerHTML += rapportHTML;
                     });
                 } else {
-                    // Si aucun rapport ne correspond
-                    contentDiv.innerHTML += '<p>Aucun rapport trouvé pour ce filtre.</p>';
+                    contentDiv.innerHTML = "<p>Aucun rapport trouvé.</p>";
                 }
             }
 
-            // Appeler la fonction au chargement de la page
-            afficherRapportsFiltres();
+            function telechargerRapport(titre) {
+                const pdfPath = `../PDF/${titre}.pdf`; // Chemin du PDF basé sur le titre
+                const link = document.createElement('a');
+                link.href = pdfPath;
+                link.download = `${titre}.pdf`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
 
+                // Compter le téléchargement
+                compterTelechargement(titre);
+            }
+            
+            function compterTelechargement(titre) {
+                const stats = JSON.parse(localStorage.getItem('telechargements')) || {};
+
+                // Incrémente le compteur pour ce rapport
+                stats[titre] = (stats[titre] || 0) + 1;
+
+                // Sauvegarde dans LocalStorage
+                localStorage.setItem('telechargements', JSON.stringify(stats));
+
+                console.log(`Téléchargement enregistré pour ${titre}: ${stats[titre]} fois`);
+            }
+
+            // Mise à jour dynamique lors de la saisie dans la barre de recherche
+            searchInput.addEventListener('input', (e) => {
+                afficherRapports(e.target.value);
+            });
+
+            afficherRapports();
         </script>
 
     </div>
@@ -153,10 +180,10 @@
 
                     if (sidebar.classList.contains('collapsed')) {
                     toggleButton.style.left = '100px';
-                    content.style.marginLeft = '100px'; // Réduit la marge gauche de #content
+                    content.style.marginLeft = '100px';
                     } else {
                         toggleButton.style.left = '260px';
-                        content.style.marginLeft = '260px'; // Rétablit la marge gauche normale
+                        content.style.marginLeft = '260px';
                     }
                 }
             });
@@ -188,7 +215,6 @@
         });
 
     </script>
-
-
+    
 </body>
 </html>
