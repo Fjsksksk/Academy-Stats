@@ -1,0 +1,76 @@
+TESTS -> Console du site
+
+
+// Tester les liens du menu (200 = OK, 404 = erreur de lien)
+document.querySelectorAll('.menu-list a').forEach(lien => {
+    console.log(`Test du lien : ${lien.textContent}`);
+    fetch(lien.href)
+        .then(response => console.log(`Statut pour ${lien.textContent} : ${response.status}`))
+        .catch(error => console.error(`Erreur pour ${lien.textContent} :`, error));
+});
+
+// Tester l'ouverture des sous-menus
+document.querySelectorAll('.has-submenu > a').forEach(lien => {
+    console.log(`Test du sous-menu pour : ${lien.textContent}`);
+    lien.click(); // Simule un clic
+    const sousMenu = lien.nextElementSibling;
+    if (sousMenu && sousMenu.classList.contains('open')) {
+        console.log(`  -> Sous-menu ouvert pour ${lien.textContent}`);
+    } else {
+        console.error(`  -> Échec de l'ouverture du sous-menu pour ${lien.textContent}`);
+    }
+});
+
+// Tester la barre de recherche
+const champRecherche = document.querySelector('#search-input');
+if (champRecherche) {
+    champRecherche.value = 'college';
+    champRecherche.dispatchEvent(new Event('input'));
+    const resultats = document.querySelectorAll('.powerbi-report-container h3');
+    console.log(`Résultats trouvés : ${resultats.length}`);
+    resultats.forEach(resultat => console.log(`  -> ${resultat.textContent}`));
+} else {
+    console.error('Champ de recherche introuvable.');
+}
+
+// Tester les URLs des rapports
+document.querySelectorAll('.powerbi-report-container iframe').forEach((iframe, index) => {
+    console.log(`Rapport ${index + 1} : ${iframe.src}`);
+});
+
+// Tester le téléchargement des rapports
+document.querySelectorAll('.download-btn').forEach((bouton, index) => {
+    console.log(`Test du bouton de téléchargement pour le rapport ${index + 1}`);
+    bouton.click();
+    console.log(`  -> Bouton cliqué pour le rapport ${index + 1}`);
+});
+
+// Tester le comportement responsive
+const testerViewport = (largeur, hauteur) => {
+    window.resizeTo(largeur, hauteur);
+    console.log(`Test de la taille de la fenêtre : ${largeur}x${hauteur}`);
+    setTimeout(() => {
+        console.log('Vérifiez visuellement la disposition.');
+    }, 500);
+};
+
+// Tester le chargement des images
+document.querySelectorAll('img').forEach((img, index) => {
+    console.log(`Test de l'image ${index + 1} : ${img.src}`);
+    img.onload = () => console.log('  -> Image chargée avec succès.');
+    img.onerror = () => console.error('  -> Échec du chargement de l\'image.');
+});
+
+// Tester les filtres dynamiques
+const filtre = 'etudiant'; // Exemple de filtre
+if (contentDiv) {
+    console.log(`Test du filtrage dynamique avec le filtre : ${filtre}`);
+    const rapportsFiltres = Array.from(contentDiv.children);
+    if (rapportsFiltres.length > 0) {
+        console.log(`  -> ${rapportsFiltres.length} rapports trouvés.`);
+    } else {
+        console.error('  -> Aucun rapport trouvé pour le filtre donné.');
+    }
+} else {
+    console.error('Conteneur de contenu introuvable.');
+}

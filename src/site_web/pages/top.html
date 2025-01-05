@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/accueil.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" rel="stylesheet">
-    <title>Academy Stats - Accueil</title>
+    <title>Academy Stats - Top</title>
     <link rel="shortcut icon" href="../images/logo_t.png" />
 </head>
 <body>
 
     <!-- Menu téléphone -->
-    <button id="hamburger-button" class="btn-hamburger">
+    <button id="bouton_hamburger" class="btn-hamburger">
         <i class="bi bi-list"></i>
     </button>
 
     <!-- Bouton pour réduire/agrandir le menu -->
-    <button id="toggle-button" class="btn-toggle">
+    <button id="bouton_basculer" class="btn-toggle">
         <i class="bi bi-arrow-left-circle"></i>
     </button>
 
     <!-- Menu -->
     <div class="main-container">
-        <nav id="sidebar" class="sidebar">
+        <nav id="barre_laterale" class="sidebar">
             <div class="logo-section">
                 <a href="../index.html">
                     <img src="../images/logo_t.png" alt="Logo" class="logo">
@@ -34,7 +34,7 @@
                 <li><a href="../pages/top.html"><i class="bi bi-bar-chart"></i> <span class="menu-text">Top Rapports</span></a></li>
                 <li class="search-bar">
                     <i class="bi bi-search"></i>
-                    <input type="text" id="search-input" placeholder="Rechercher...">
+                    <input type="text" id="champ_recherche" placeholder="Rechercher...">
                 </li>
                 <li>
                     <a href="#"><i class="bi bi-list"></i> <span class="menu-text">Catégories</span></a>
@@ -63,41 +63,31 @@
         </nav>
 
         <!-- Contenu principal -->
-        <div id="content" class="content">
+        <div id="contenu" class="content">
             <!-- Titre principal -->
-        </br><h1 class="page-title">TOP 5 des meilleurs rapports 2024</h1>
+            </br><h1 class="page-title">TOP 5 des meilleurs rapports 2024</h1>
 
             <!-- Section des rapports -->
-            <div id="top-rapports">
+            <div id="top_rapports">
 
                 <div class="powerbi-report-container">
                     <div class="ranking">
                         <span class="ranking-number">1.</span>
                         <i class="bi bi-trophy ranking-icon"></i>
                     </div>
-                    <h3>Rapport Étudiant 1</h3></br>
+                    <h3 style="margin-top : 10px;">Rapport Étudiant 1</h3></br>
                     <iframe src="https://app.powerbi.com/reportEmbed?reportId=2708e2a8-596a-477c-a708-78ad27a1aebe&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
-                    <button class="download-btn" onclick="telechargerRapport('Rapport Étudiant 1')">Télécharger</button>
-                    <!-- Espace analyse des données -->
-                    <div id="data-analysis">
-                        <h2>Analyse des données</h2>
-                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
-                    </div>
+                    <button class="download-btn" onclick="telecharger_rapport('Rapport Étudiant 1')">Télécharger</button>
                 </div>
-                
+
                 <div class="powerbi-report-container">
                     <div class="ranking">
                         <span class="ranking-number">2.</span>
                         <i class="bi bi-trophy ranking-icon"></i>
                     </div>
-                    <h3>Rapport Collège Sexe</h3></br>
+                    <h3 style="margin-top : 10px;">Rapport Collège Sexe</h3></br>
                     <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
-                    <button class="download-btn" onclick="telechargerRapport('Rapport Collège Sexe')">Télécharger</button>
-                    <!-- Espace analyse des données -->
-                    <div id="data-analysis">
-                        <h2>Analyse des données</h2>
-                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
-                    </div>
+                    <button class="download-btn" onclick="telecharger_rapport('Rapport Collège Sexe')">Télécharger</button>
                 </div>
 
                 <div class="powerbi-report-container">
@@ -105,14 +95,9 @@
                         <span class="ranking-number">3.</span>
                         <i class="bi bi-trophy ranking-icon"></i>
                     </div>
-                    <h3>Rapport Collège Sexe</h3></br>
+                    <h3 style="margin-top : 10px;">Rapport Collège Sexe</h3></br>
                     <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
-                    <button class="download-btn" onclick="telechargerRapport('Rapport Collège Sexe')">Télécharger</button>
-                    <!-- Espace analyse des données -->
-                    <div id="data-analysis">
-                        <h2>Analyse des données</h2>
-                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
-                    </div>
+                    <button class="download-btn" onclick="telecharger_rapport('Rapport Collège Sexe')">Télécharger</button>
                 </div>
 
                 <div class="powerbi-report-container">
@@ -120,14 +105,9 @@
                         <span class="ranking-number">4.</span>
                         <i class="bi bi-trophy ranking-icon"></i>
                     </div>
-                    <h3>Rapport Collège Sexe</h3></br>
+                    <h3 style="margin-top : 10px;">Rapport Collège Sexe</h3></br>
                     <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
-                    <button class="download-btn" onclick="telechargerRapport('Rapport Collège Sexe')">Télécharger</button>
-                    <!-- Espace analyse des données -->
-                    <div id="data-analysis">
-                        <h2>Analyse des données</h2>
-                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
-                    </div>
+                    <button class="download-btn" onclick="telecharger_rapport('Rapport Collège Sexe')">Télécharger</button>
                 </div>
 
                 <div class="powerbi-report-container">
@@ -135,84 +115,129 @@
                         <span class="ranking-number">5.</span>
                         <i class="bi bi-trophy ranking-icon"></i>
                     </div>
-                    <h3>Rapport Collège Sexe</h3></br>
+                    <h3 style="margin-top : 10px;">Rapport Collège Sexe</h3></br>
                     <iframe src="https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
-                    <button class="download-btn" onclick="telechargerRapport('college-sexe')">Télécharger</button>
-                    <!-- Espace analyse des données -->
-                    <div id="data-analysis">
-                        <h2>Analyse des données</h2>
-                        <p>Insérez ici une section pour l'analyse des données ou des graphiques supplémentaires.</p>
-                    </div>
+                    <button class="download-btn" onclick="telecharger_rapport('college-sexe')">Télécharger</button>
                 </div>
-               
+
             </div>
             
         </div>
 
     <script>
-        function telechargerRapport(titre) {
-            const pdfPath = `../PDF/${titre}.pdf`; 
-            const link = document.createElement('a');
-            link.href = pdfPath;
-            link.download = `${titre}.pdf`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        // Télécharger un rapport en PDF avec gestion des erreurs
+        function telecharger_rapport(titre) {
+            try {
+                const chemin_pdf = `../PDF/${titre}.pdf`; 
+                const lien = document.createElement('a');
+                lien.href = chemin_pdf;
+                lien.download = `${titre}.pdf`;
+                document.body.appendChild(lien);
+                lien.click();
+                document.body.removeChild(lien);
+            } catch (error) {
+                console.error("Erreur lors du téléchargement du rapport :", error);
+                alert("Impossible de télécharger le rapport. Veuillez réessayer plus tard.");
+            }
         }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const menu_est_reduit = barre_laterale.classList.contains('collapsed');
+                if (window.innerWidth <= 768) {
+                    // Mode responsive
+                    contenu.style.marginLeft = '0';
+                    barre_laterale.style.left = '-250px';
+                } else {
+                    // Mode normal
+                    contenu.style.marginLeft = menu_est_reduit ? '90px' : '250px';
+                    barre_laterale.style.left = '0';
+                }
+            } catch (error) {
+                console.error("Erreur lors de l'initialisation de la disposition :", error);
+            }
+        });
+
     </script> 
 
-    </div>
-
     <script>
-        
-        const hamburgerButton = document.getElementById('hamburger-button');
-        const toggleButton = document.getElementById('toggle-button');
-        const sidebar = document.getElementById('sidebar');
-        const content = document.getElementById('content');
+        const bouton_hamburger = document.getElementById('bouton_hamburger');
+        const bouton_basculer = document.getElementById('bouton_basculer');
+        const barre_laterale = document.getElementById('barre_laterale');
+        const contenu = document.getElementById('contenu');
 
-        if (hamburgerButton && sidebar && toggleButton) {
-            // Fonction pour réduire/agrandir le menu
-            toggleButton.addEventListener('click', () => {
-                if (window.innerWidth > 1024) {
-                    sidebar.classList.toggle('collapsed');
-                    toggleButton.querySelector('i').classList.toggle('bi-arrow-left-circle');
-                    toggleButton.querySelector('i').classList.toggle('bi-arrow-right-circle');
+        if (bouton_hamburger && barre_laterale && bouton_basculer) {
+            // Réduire ou agrandir le menu
+            bouton_basculer.addEventListener('click', () => {
+                try {
+                    if (window.innerWidth > 1024) {
+                        barre_laterale.classList.toggle('collapsed');
+                        bouton_basculer.querySelector('i').classList.toggle('bi-arrow-left-circle');
+                        bouton_basculer.querySelector('i').classList.toggle('bi-arrow-right-circle');
 
-                    if (sidebar.classList.contains('collapsed')) {
-                    toggleButton.style.left = '100px';
-                    content.style.marginLeft = '100px';
-                    } else {
-                        toggleButton.style.left = '260px';
-                        content.style.marginLeft = '260px';
+                        if (barre_laterale.classList.contains('collapsed')) {
+                            bouton_basculer.style.left = '100px';
+                            contenu.style.marginLeft = '100px';
+                        } else {
+                            bouton_basculer.style.left = '260px';
+                            contenu.style.marginLeft = '260px';
+                        }
                     }
+                } catch (error) {
+                    console.error("Erreur lors du basculement du menu :", error);
                 }
             });
 
-            hamburgerButton.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
+            // Bouton hamburger en mode responsive
+            bouton_hamburger.addEventListener('click', () => {
+                try {
+                    if (window.innerWidth <= 768) {
+                        const menu_est_ouvert = barre_laterale.style.left === '0px';
+                        barre_laterale.style.left = menu_est_ouvert ? '-250px' : '0';
+                    }
+                } catch (error) {
+                    console.error("Erreur lors de l'ouverture du menu hamburger :", error);
+                }
             });
 
+            // Redimensionnement de la fenêtre
             window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    sidebar.classList.remove('open');
-                    sidebar.style.left = '0';
-                    content.style.marginLeft = sidebar.classList.contains('collapsed') ? '90px' : '250px';
-                } else {
-                    sidebar.style.left = '-250px';
-                    content.style.marginLeft = '0';
+                try {
+                    if (window.innerWidth > 768) {
+                        barre_laterale.classList.remove('open');
+                        barre_laterale.style.left = '0';
+                        contenu.style.marginLeft = barre_laterale.classList.contains('collapsed') ? '90px' : '250px';
+                    } else {
+                        barre_laterale.style.left = '-250px';
+                        contenu.style.marginLeft = '0';
+                    }
+                } catch (error) {
+                    console.error("Erreur lors du redimensionnement de la fenêtre :", error);
                 }
             });
         }
 
-        // Gestion des sous-menus déroulants
+
+        // Gérer les sous-menus avec gestion des erreurs
         document.querySelectorAll('.has-submenu > a').forEach(menu => {
             menu.addEventListener('click', (e) => {
-                e.preventDefault();
-                const submenu = menu.nextElementSibling;
-                submenu.classList.toggle('hidden');
-                submenu.classList.toggle('open');
+                try {
+                    e.preventDefault();
+                    const sous_menu = menu.nextElementSibling;
+                    sous_menu.classList.toggle('hidden');
+                    sous_menu.classList.toggle('open');
+                } catch (error) {
+                    console.error("Erreur lors de la gestion des sous-menus :", error);
+                }
             });
         });
+
+        // Gestionnaire global des erreurs
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error(`Erreur capturée : ${message} à ${source}:${lineno}:${colno}`, error);
+            alert("Une erreur s'est produite, veuillez vérifier la console pour plus d'informations.");
+        };
 
     </script>
     

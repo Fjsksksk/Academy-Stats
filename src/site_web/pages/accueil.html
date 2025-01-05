@@ -94,68 +94,74 @@
 
             // Fonction pour récupérer le paramètre de filtre dans l'URL
             function getFilterFromURL() {
-                const params = new URLSearchParams(window.location.search);
-                return params.get('filter') || ""; 
-            }
-
-            // Fonction pour afficher les rapports filtrés
-            function afficherRapports(searchTerm = "") {
-                const filter = getFilterFromURL();
-                contentDiv.innerHTML = "";
-
-                // Filtrer les rapports selon le tag et la barre de recherche
-                const rapportsFiltres = rapports.filter(rapport => {
-                    const correspondAuFiltre = filter ? rapport.tags.includes(filter) : true;
-                    const correspondALaRecherche = rapport.titre.toLowerCase().includes(searchTerm.toLowerCase());
-                    return correspondAuFiltre && correspondALaRecherche;
-                });
-
-                if (rapportsFiltres.length > 0) {
-                    rapportsFiltres.forEach(rapport => {
-                        const rapportHTML = `
-                            <div>
-                                <h3>${rapport.titre}</h3></br>
-                                <div class="powerbi-report-container">
-                                    <iframe title="${rapport.titre}" width="1140" height="541.25" src="${rapport.url}" frameborder="0" allowfullscreen></iframe>
-                                    <button class="download-btn" onclick="telechargerRapport('${rapport.titre}')">Télécharger</button>
-                                </div>
-                            </div>
-                        `;
-                        contentDiv.innerHTML += rapportHTML;
-                    });
-                } else {
-                    contentDiv.innerHTML = "<p>Aucun rapport trouvé.</p>";
+                try {
+                    const params = new URLSearchParams(window.location.search);
+                    return params.get('filter') || "";
+                } catch (error) {
+                    console.error("Erreur lors de la récupération du filtre dans l'URL :", error);
+                    return ""; 
                 }
             }
 
-            function telechargerRapport(titre) {
-                const pdfPath = `../PDF/${titre}.pdf`; // Chemin du PDF basé sur le titre
-                const link = document.createElement('a');
-                link.href = pdfPath;
-                link.download = `${titre}.pdf`;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+            function afficherRapports(searchTerm = "") {
+                try {
+                    const filter = getFilterFromURL(); 
+                    contentDiv.innerHTML = ""; 
 
-                // Compter le téléchargement
-                compterTelechargement(titre);
+                    // Filtrer les rapports selon le tag et la barre de recherche
+                    const rapportsFiltres = rapports.filter(rapport => {
+                        const correspondAuFiltre = filter ? rapport.tags.includes(filter) : true;
+                        const correspondALaRecherche = rapport.titre.toLowerCase().includes(searchTerm.toLowerCase());
+                        return correspondAuFiltre && correspondALaRecherche;
+                    });
+
+                    // Affichage des rapports filtrés
+                    if (rapportsFiltres.length > 0) {
+                        rapportsFiltres.forEach(rapport => {
+                            const rapportHTML = `
+                                <div>
+                                    <h3>${rapport.titre}</h3></br>
+                                    <div class="powerbi-report-container">
+                                        <iframe title="${rapport.titre}" width="1140" height="541.25" src="${rapport.url}" frameborder="0" allowfullscreen></iframe>
+                                        <button class="download-btn" onclick="telechargerRapport('${rapport.titre}')">Télécharger</button>
+                                    </div>
+                                </div>
+                            `;
+                            contentDiv.innerHTML += rapportHTML;
+                        });
+                    } else {
+                        contentDiv.innerHTML = "<p>Aucun rapport trouvé.</p>";
+                    }
+                } catch (error) {
+                    console.error("Erreur lors de l'affichage des rapports :", error);
+                    contentDiv.innerHTML = "<p>Une erreur s'est produite lors du chargement des rapports. Veuillez réessayer plus tard.</p>";
+                }
             }
-            
-            function compterTelechargement(titre) {
-                const stats = JSON.parse(localStorage.getItem('telechargements')) || {};
 
-                // Incrémente le compteur pour ce rapport
-                stats[titre] = (stats[titre] || 0) + 1;
-
-                // Sauvegarde dans LocalStorage
-                localStorage.setItem('telechargements', JSON.stringify(stats));
-
-                console.log(`Téléchargement enregistré pour ${titre}: ${stats[titre]} fois`);
+            // Fonction téléchargement
+            function telechargerRapport(titre) {
+                try {
+                    const pdfPath = `../PDF/${titre}.pdf`;
+                    const link = document.createElement('a');
+                    link.href = pdfPath;
+                    link.download = `${titre}.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } catch (error) {
+                    console.error("Erreur lors du téléchargement du rapport :", error);
+                    alert("Impossible de télécharger le rapport. Veuillez réessayer plus tard.");
+                }
             }
 
             // Mise à jour dynamique lors de la saisie dans la barre de recherche
             searchInput.addEventListener('input', (e) => {
-                afficherRapports(e.target.value);
+                try {
+                    afficherRapports(e.target.value); // Appel de la fonction d'affichage avec le terme recherché
+                } catch (error) {
+                    console.error("Erreur lors de la recherche dynamique :", error);
+                    alert("Une erreur s'est produite lors de la mise à jour des rapports. Veuillez réessayer.");
+                }
             });
 
             afficherRapports();
@@ -171,48 +177,78 @@
         const content = document.getElementById('content');
 
         if (hamburgerButton && sidebar && toggleButton) {
+            
             // Fonction pour réduire/agrandir le menu
             toggleButton.addEventListener('click', () => {
-                if (window.innerWidth > 1024) {
-                    sidebar.classList.toggle('collapsed');
-                    toggleButton.querySelector('i').classList.toggle('bi-arrow-left-circle');
-                    toggleButton.querySelector('i').classList.toggle('bi-arrow-right-circle');
+                try {
+                    if (window.innerWidth > 1024) {
+                        sidebar.classList.toggle('collapsed');
+                        toggleButton.querySelector('i').classList.toggle('bi-arrow-left-circle');
+                        toggleButton.querySelector('i').classList.toggle('bi-arrow-right-circle');
 
-                    if (sidebar.classList.contains('collapsed')) {
-                    toggleButton.style.left = '100px';
-                    content.style.marginLeft = '100px';
-                    } else {
-                        toggleButton.style.left = '260px';
-                        content.style.marginLeft = '260px';
+                        if (sidebar.classList.contains('collapsed')) {
+                            toggleButton.style.left = '100px';
+                            content.style.marginLeft = '100px';
+                        } else {
+                            toggleButton.style.left = '260px';
+                            content.style.marginLeft = '260px';
+                        }
                     }
+                } catch (error) {
+                    console.error("Erreur lors du basculement du menu :", error);
+                    alert("Une erreur s'est produite lors de la gestion du menu. Veuillez réessayer.");
                 }
             });
 
+            // Fonction bouton Hamburger
             hamburgerButton.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    sidebar.classList.remove('open');
-                    sidebar.style.left = '0';
-                    content.style.marginLeft = sidebar.classList.contains('collapsed') ? '90px' : '250px';
-                } else {
-                    sidebar.style.left = '-250px';
-                    content.style.marginLeft = '0';
+                try {
+                    sidebar.classList.toggle('open'); 
+                } catch (error) {
+                    console.error("Erreur lors du basculement du menu hamburger :", error);
+                    alert("Une erreur s'est produite lors de l'ouverture du menu. Veuillez réessayer.");
                 }
             });
+
+            // Fonction Redimensionnement
+            window.addEventListener('resize', () => {
+                try {
+                    if (window.innerWidth > 768) {
+                        sidebar.classList.remove('open');
+                        sidebar.style.left = '0';
+                        content.style.marginLeft = sidebar.classList.contains('collapsed') ? '90px' : '250px';
+                    } else {
+                        sidebar.style.left = '-250px';
+                        content.style.marginLeft = '0';
+                    }
+                } catch (error) {
+                    console.error("Erreur lors du redimensionnement de la fenêtre :", error);
+                    alert("Une erreur s'est produite lors de l'ajustement de la disposition. Veuillez actualiser la page.");
+                }
+            });
+
         }
 
         // Gestion des sous-menus déroulants
         document.querySelectorAll('.has-submenu > a').forEach(menu => {
             menu.addEventListener('click', (e) => {
-                e.preventDefault();
-                const submenu = menu.nextElementSibling;
-                submenu.classList.toggle('hidden');
-                submenu.classList.toggle('open');
+                try {
+                    e.preventDefault(); 
+                    const submenu = menu.nextElementSibling;
+                    submenu.classList.toggle('hidden');
+                    submenu.classList.toggle('open'); 
+                } catch (error) {
+                    console.error("Erreur lors de la gestion des sous-menus :", error);
+                    alert("Une erreur s'est produite lors de l'ouverture du sous-menu. Veuillez réessayer.");
+                }
             });
         });
+
+        // Gestionnaire global des erreurs
+        window.onerror = function (message, source, lineno, colno, error) {
+            console.error(`Erreur capturée : ${message} à ${source}:${lineno}:${colno}`, error);
+            alert("Une erreur imprévue s'est produite. Veuillez vérifier la console pour plus de détails.");
+        };
 
     </script>
     
