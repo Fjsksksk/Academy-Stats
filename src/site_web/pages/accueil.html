@@ -20,8 +20,8 @@
         <i class="bi bi-arrow-left-circle"></i>
     </button>
 
-    <!-- Menu -->
     <div class="main-container">
+        <!-- Menu -->
         <nav id="sidebar" class="sidebar">
             <div class="logo-section">
                 <a href="../index.html">
@@ -40,21 +40,28 @@
                     <a href="#"><i class="bi bi-list"></i> <span class="menu-text">Catégories</span></a>
                     <ul class="submenu">
                         <li class="has-submenu">
-                            <a href="#"><span class="menu-text">Niveau Scolaire</span></a>
+                            <a href="#"><span class="menu-text">Niveau</span></a>
                             <ul class="submenu hidden">
                                 <li><a href="../pages/accueil.html?filter=ecole">École</a></li>
-                                <li><a href="#">Collège</a></li>
-                                <li><a href="#">Lycée</a></li>
+                                <li><a href="../pages/accueil.html?filter=college">Collège</a></li>
+                                <li><a href="../pages/accueil.html?filter=lycee">Lycée</a></li>
                                 <li><a href="../pages/accueil.html?filter=universite">Université</a></li>
+                                <li><a href="../pages/accueil.html?filter=formation">Formations</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu">
-                            <a href="#"><span class="menu-text">Test</span></a>
+                            <a href="#"><span class="menu-text">Statut</span></a>
                             <ul class="submenu hidden">
-                                <li><a href="#">École</a></li>
-                                <li><a href="#">Collège</a></li>
-                                <li><a href="#">Lycée</a></li>
-                                <li><a href="#">Université</a></li>
+                                <li><a href="../pages/accueil.html?filter=etudiant">Etudiant</a></li>
+                                <li><a href="../pages/accueil.html?filter=enseignant">Enseignant</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><span class="menu-text">Autres</span></a>
+                            <ul class="submenu hidden">
+                                <li><a href="../pages/accueil.html?filter=bac">ParcourSup</a></li>
+                                <li><a href="../pages/accueil.html?filter=crous">CROUS</a></li>
+                                <li><a href="../pages/accueil.html?filter=genre">Genre</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,32 +69,58 @@
             </ul>            
         </nav>
 
-        <!-- Contenu principal -->
         <div id="content" class="content">
         </div>
 
+        <!-- Génération des rapports, filtrage et recherche-->
         <script>
             // Base de données locale des rapports
             const rapports = [
                 {
                     id: 1,
-                    titre: "projet",
+                    titre: "Enseignants par Sexe et Lieu",
+                    url: "https://app.powerbi.com/reportEmbed?reportId=5a25c528-afbf-4c30-a543-2cb8b16a74d6&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
+                    tags: ["genre", "universite", "enseignant"]
+                },
+                {
+                    id: 2,
+                    titre: "Admissions Post-Bac - Écart entre Propositions et Acceptations au Fil des Années",
+                    url: "https://app.powerbi.com/reportEmbed?reportId=20aedcd1-154b-4616-9573-4a39b5bbe901&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
+                    tags: ["lycee", "etudiant", "bac", "universite"]
+                },
+                
+                {
+                    id: 4,
+                    titre: "Effectifs Étudiants par Formation",
+                    url: "https://app.powerbi.com/reportEmbed?reportId=a02a0829-3934-4a8e-9e87-5d6b6d683c59&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
+                    tags: ["etudiant", "enseignant", "universite", "formation"]
+                },
+                {
+                    id: 5,
+                    titre: "La Parité Genrée dans les Collèges - Un État des Lieux",
+                    url: "https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
+                    tags: ["enseignant", "college", "genre"]
+                },
+                {
+                    id: 6,
+                    titre: "Effectifs Enseignants par Âge et Catégorie",
+                    url: "https://app.powerbi.com/reportEmbed?reportId=149cca4c-d324-4632-9704-ab221f174f36&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
+                    tags: ["enseignant", "formation", "ecole", "college", "lycee", "universite"]
+                },
+                {
+                    id: 7,
+                    titre: "Projet",
                     url: "https://app.powerbi.com/reportEmbed?reportId=2708e2a8-596a-477c-a708-78ad27a1aebe&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
                     tags: ["etudiant", "enseignant", "ecole"]
                 },
                 {
-                    id: 2,
-                    titre: "college-sexe",
-                    url: "https://app.powerbi.com/reportEmbed?reportId=1b7f50ef-e8d6-4436-9ca1-7b675b405526&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
-                    tags: ["enseignant", "universite"]
-                },
-                {
                     id: 3,
-                    titre: "Rapport Autres 1",
-                    url: "https://app.powerbi.com/reportEmbed?reportId=another-report-id",
-                    tags: ["ecole"]
-                }
+                    titre: "Carte des CROUS en France - Répartition Géographique et Zones de Couverture",
+                    url: "https://app.powerbi.com/reportEmbed?reportId=a619eae5-1c20-4de8-89c6-5a173cd96804&autoAuth=true&ctid=054ac6ef-3ff9-4003-8495-fcffd3e9cbc9",
+                    tags: ["crous", "etudiant", "universite"]
+                },
             ];
+
 
             const searchInput = document.getElementById('search-input');
             const contentDiv = document.getElementById('content');
@@ -169,6 +202,7 @@
 
     </div>
 
+    <!-- Menu Dynamique -->
     <script>
         
         const hamburgerButton = document.getElementById('hamburger-button');

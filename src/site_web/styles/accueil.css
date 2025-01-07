@@ -200,12 +200,16 @@ p {
     display: none;
 }
 
-
+.data-analysis h4 {
+    color: #2b3a60;
+    font-size: 1.7em;
+    margin-bottom: 10px;
+}
 
 /*Power BI */
 
 #top-rapports h3 {
-    margin-top: 10px; /* Réduction de la marge au-dessus des titres */
+    margin-top: 10px;
 }
 
 .powerbi-report-container {
